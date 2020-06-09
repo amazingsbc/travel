@@ -1,0 +1,29 @@
+@font-face {font-family: "iconfont";
+  src: url('./iconfont/iconfont.eot?t=1591665578028'); /* IE9 */
+  src: url('./iconfont/iconfont.eot?t=1591665578028#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAANQAAsAAAAABywAAAMDAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqBYIFfATYCJAMQCwoABCAFhG0HTxtYBhEVlMVkf4cg4/b/KSQgCBlK9EiuqVe7o1V64rWz1qyEYeJDsPd5wd+n4RjgBAAAAAAQxON+5bwkfy8HDBIYFADYApIlEnLBtudaRRZYqG4CyIyDXczsOaFHTbBgfa4BAszMZxpDvRtcOPI66D3hoOMgdpnRALi1KUV2ChthmJLz4Ls8I3meH+FCuoyrY1wNsg22GG7fbnCJhZBINsISzHwJmYUQAPHfBiZDdBIgYO7gmrr0SMyzt7lENVXSRqNIwIFNBxYdZBvIBH3D2E0EDmEzBAgiTQlpbXtHsRhALwFkwy7PYnNeDMZKWARXzUSDXMXBqnPqHXCFf19+og4UjgYMHFzbAo33hz7qf4KiEM/nAKxpoIESYEBWaqNzNGKRNUHNDeXAYlEwV50tv7TAjoXwLw8EjQJxAVJDACjVlPrGxBiBwFeLQMPXlhQUwA/RWBmvABM6PuUZCkHi2vADT3elr/fND+OFNvDWvji293dWUMGvfsjULyw2jE+HX7gXs3Dzgm7GLd3nsYrGrqspyVmt1u9x09DgdhPCVbdnoWo5vvM2e7Ofb2H9n3VspCZD1ncbig2Tr4Y5Okdg8L6Esz3+7n+yHjoea1f/O3YA+D2mAVDH1R0A3ZjmfvPfkHs+GNaeBoCPDs94hj9o4MOJe4u/sLhnmQmlwGyML8OiyGPIGt1DAUEEAd81CVG+zKGJ7R0GwebEFigCSAWNJQdt8CXgEEwpuLA0QBDFOqYHE22PRkwgUOSUAkKEN6AIww2aCPtog/8MDnF+g4uIhCDGi14wGIrZJ9grTjD8wI4cCVl1L9KvaF6+l6yUM58omw1AlZfFRIcRZY4h29vUqgQkHKBVtkPvGVbhBUfNZ9W1KQqqe1M+ckj2EuwVJzD8gB05Eq2t+9Lnr2hevpeWrAHvE2WzjYNKruyB7lSxV9a9XLO9TU2VAAkH0Crt0HsGa327BUfNzSPCa6OA1aivKl9fEz6g0MoDLECNhCnGXsZ5T04Q/mTekl4W20fjMRtYlUOSAAA=') format('woff2'),
+  url('./iconfont/iconfont.woff?t=1591665578028') format('woff'),
+  url('./iconfont/iconfont.ttf?t=1591665578028') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('./iconfont/iconfont.svg?t=1591665578028#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*.iconsearch:before {*/
+  /*content: "\e625";*/
+/*}*/
+
+/*.iconarrow-lift:before {*/
+  /*content: "\e743";*/
+/*}*/
+
+/*.icontriangle-bottom:before {*/
+  /*content: "\e708";*/
+/*}*/
+
