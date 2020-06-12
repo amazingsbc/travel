@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper >
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -53,7 +53,10 @@ export default{
         id: '009',
         imgUrl: 'http://img1.qunarzz.com/piao/fusion/1710/a6/83f636bd75ae6302.png',
         desc: '0009'
-      }]
+      }],
+      swiperOption: {
+        pagination: '.fake-pagination'
+      }
     }
   },
   computed: {
@@ -78,32 +81,34 @@ export default{
     overflow hidden
     height 0
     padding-bottom 50%
-  .icon
-    position relative
-    overflow hidden
-    float: left
-    width 25%
-    padding-bottom 25%
-    .icon-img
-      position absolute
-      top 0
-      left 0
-      right 0
-      bottom 0.44rem
-      box-sizing border-box
-      padding .1rem
-      .icon-imgcontent
-        display block
-        height 100%
-        margin 0 auto
-    .icon-desc
-      position absolute
-      left 0
-      right 0
-      bottom 0
-      height .44rem
-      line-height .44rem
-      text-align center
-      color $darkTextColor
-      ellipsis()
+  .icons
+    margin-top .1rem
+    .icon
+      position relative
+      overflow hidden
+      float: left
+      width 25%
+      padding-bottom 25%
+      .icon-img
+        position absolute
+        top 0
+        left 0
+        right 0
+        bottom 0.44rem
+        box-sizing border-box
+        padding .1rem
+        .icon-imgcontent
+          display block
+          height 100%
+          margin 0 auto
+      .icon-desc
+        position absolute
+        left 0
+        right 0
+        bottom 0
+        height .44rem
+        line-height .44rem
+        text-align center
+        color $darkTextColor
+        ellipsis()
 </style>
