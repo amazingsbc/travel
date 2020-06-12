@@ -16,25 +16,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: '//p0.meituan.net/200.0/deal/aa2c2c48e7230490a285d8494541050988828.jpg@143_0_714_714a%7C267h_267w_2e_90Q',
-        title: '金真子纸上烤肉',
-        desc: '单人自助'
-      }, {
-        id: '0002',
-        imgUrl: '//p0.meituan.net/200.0/deal/aa2c2c48e7230490a285d8494541050988828.jpg@143_0_714_714a%7C267h_267w_2e_90Q',
-        title: '金真子纸上烤肉',
-        desc: '单人自助'
-      }, {
-        id: '0003',
-        imgUrl: '//p0.meituan.net/200.0/deal/aa2c2c48e7230490a285d8494541050988828.jpg@143_0_714_714a%7C267h_267w_2e_90Q',
-        title: '金真子纸上烤肉',
-        desc: '单人自助'
-      }]
-    }
+  props: {
+    recommendList: Array
   }
 }
 </script>
