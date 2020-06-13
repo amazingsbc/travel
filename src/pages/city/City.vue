@@ -7,7 +7,6 @@
       :hotCities="hotCities"
       :letter="letter"
     >
-
     </city-list>
     <city-alphabet :cities="cities" @change="handleLetterChange"></city-alphabet>
   </div>
