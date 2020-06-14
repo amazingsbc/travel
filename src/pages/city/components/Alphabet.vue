@@ -7,7 +7,7 @@
 export default {
   name: 'CityAlphabet',
   props: {
-      cities: Object
+    cities: Object
   }
 }
 </script>
