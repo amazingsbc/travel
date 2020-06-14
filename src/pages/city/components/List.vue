@@ -48,7 +48,7 @@ export default {
   props: ['cities', 'hotCities', 'letter'],
   computed: {
     ...mapState({
-      currentCity: 'hhh'
+      currentCity: 'city'
     })
   },
   methods: {
