@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="https://img1.qunarzz.com/vs_ceph_vs_tts/4370c9e0-2314-4da3-a076-7de97b06bc42.jpg_r_640x420x95_7dc4e088.jpg">
+      <img class="banner-img" :src="bannerImg">
       <div class="banner-info">
-        <div class="banner-title">郑州出发-自由行</div>
+        <div class="banner-title">{{this.sightName}}</div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe61e;</span>
-          39
+          {{this.bannerImgs.length}}
         </div>
       </div>
     </div>
     <common-gallary
-      :imgs="imgs"
+      :imgs="bannerImgs"
       v-show="showGallary"
       @close="handleGallaryClose"
     ></common-gallary>
@@ -23,9 +23,13 @@ export default {
   name: 'DetailBanner',
   data () {
     return {
-      imgs: ['https://img1.qunarzz.com/vs_ceph_vs_tts/4370c9e0-2314-4da3-a076-7de97b06bc42.jpg_r_640x420x95_7dc4e088.jpg', 'https://img1.qunarzz.com/vs_ceph_vs_tts/7cd7e29b-a671-4216-b07f-d28d741f1dd5.jpg_r_1280x840x95_40f553a3.jpg'],
       showGallary: false
     }
+  },
+  props: {
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
   },
   methods: {
     handleBannerClick () {
