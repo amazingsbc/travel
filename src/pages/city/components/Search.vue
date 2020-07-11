@@ -23,53 +23,56 @@
   </div>
 </template>
 <script>
+import { ref, computed, watch, onMounted } from 'vue'
 import Bscroll from 'better-scroll'
+import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
 export default {
   name: 'CitySearch',
   props: ['cities'],
-  data () {
-    return {
-      keyword: '',
-      list: [],
-      timer: null
-    }
-  },
-  methods: {
-    handleCityClick (city) {
-      this.$store.commit('changeCity', city)
-      this.$router.push('/')
-    }
-  },
-  computed: {
-    hasNoData () {
-      return !this.list.length
-    }
-  },
-  mounted () {
-    this.scroll = new Bscroll(this.$refs.search, {})
-  },
-  watch: {
-    keyword () {
-      if (this.timer) {
-        clearTimeout(this.timer)
+  setup(props) {
+    const keyword = ref('')
+    const list = ref([])
+    let timer = null
+    const store = useStore()
+    const router = useRouter()
+    const search = ref(null)
+    const hasNoData = computed(()=>{
+      !list.length
+    })
+
+    watch(keyword,(keyword,prevKeyword)=>{
+      if (timer) {
+        clearTimeout(timer)
+        timer = null
       }
-      if (!this.keyword) {
-        this.list = []
+      if (!keyword) {
+        list.value = []
         return
       }
-      this.timer = setTimeout(() => {
+      timer = setTimeout(() => {
         const result = []
-        for (let i in this.cities) {
-          this.cities[i].forEach((value) => {
-            if (value.spell.indexOf(this.keyword) > -1 ||
-              value.name.indexOf(this.keyword) > -1) {
+        for (let i in props.cities) {
+          props.cities[i].forEach((value) => {
+            if (value.spell.indexOf(keyword) > -1 ||
+              value.name.indexOf(keyword) > -1) {
               result.push(value)
             }
           })
         }
-        this.list = result
+        list.value = result
       }, 100)
+    })
+
+    function handleCityClick(city){
+      store.commit('changeCity',city)
+      router.push('/')
     }
+
+    onMounted(()=>{
+      new Bscroll(search.value, {})
+    })
+    return { search, hasNoData, keyword, list, handleCityClick}
   }
 }
 </script>

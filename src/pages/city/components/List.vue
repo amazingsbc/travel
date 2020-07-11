@@ -5,7 +5,7 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">{{this.currentCity}}</div>
+            <div class="button">{{currentCity}}</div>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@
       <div
         class="area" v-for="(item,key) of cities"
         :key="key"
-        :ref="key"
+        :ref="elem => elems[key] = elem"
       >
         <div class="title border-topbottom">{{key}}</div>
         <div
@@ -41,37 +41,39 @@
   </div>
 </template>
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { watch, onMounted,ref } from 'vue'
+import { useStore } from 'vuex'
 import BScroll from 'better-scroll'
+import { useRouter } from 'vue-router'
 export default {
   name: 'CityList',
   props: ['cities', 'hotCities', 'letter'],
-  computed: {
-    ...mapState({
-      currentCity: 'city'
+  setup(props){
+    const store = useStore()
+    const router = useRouter()
+    const currentCity = store.state.city
+    const elems = ref({})
+    const wrapper = ref(null)
+    const sroll = null
+  
+    function handleCityClick(city){
+      store.commit('changeiCity', city)
+      router.push('/')
+    }
+
+    watch(()=>props.letter,(letter, prevLetter)=>{
+      if (letter && scroll) {
+        const element = elems.value[letter]
+        scroll.scrollToElement(element)
+      }
     })
-  },
-  methods: {
-    handleCityClick (city) {
-      this.changeCity(city)
-      this.$router.push('/')
-    },
-    ...mapMutations(['changeCity'])
-  },
-  mounted () {
-    this.$nextTick(() => {
-      this.scroll = new BScroll(this.$refs.wrapper, {
+
+    onMounted(()=>{
+      scroll = new BScroll(wrapper.value, {
         click: true
       })
     })
-  },
-  watch: {
-    letter () {
-      if (this.letter) {
-        const element = this.$refs[this.letter][0]
-        this.scroll.scrollToElement(element)
-      }
-    }
+    return { elems, currentCity, wrapper, handleCityClick}
   }
 }
 </script>

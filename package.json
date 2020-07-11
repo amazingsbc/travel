@@ -8,21 +8,22 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11",
-    "vue-router": "^3.2.0",
-    "vuex": "^3.4.0"
+    "vue": "^3.0.0-beta.1",
+    "vue-router": "^4.0.0-alpha.6",
+    "vuex": "^4.0.0-alpha.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-router": "~4.4.0",
     "@vue/cli-plugin-vuex": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
-    "fastclick": "^1.0.6",
-    "better-scroll": "^1.15.2",
-    "vue-awesome-swiper": "^2.6.7",
+    "@vue/compiler-sfc": "^3.0.0-beta.1",
     "axios": "^0.19.2",
+    "better-scroll": "^1.15.2",
+    "fastclick": "^1.0.6",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-awesome-swiper": "^2.6.7",
+    "vue-cli-plugin-vue-next": "~0.1.3"
   }
 }

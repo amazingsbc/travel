@@ -12,23 +12,20 @@
   </div>
 </template>
 <script>
+import {computed} from 'vue'
 export default{
   name: 'HomeSwiper',
   props: {
     list: Array
   },
-  data () {
-    return {
-      swiperOption: {
+  setup(props) {
+    const swiperOption = {
         pagination: '.swiper-pagination',
         loop: true
       }
-    }
-  },
-  computed: {
-    swiperList () {
+    const swiperList = computed(()=>{
       var res = []
-      this.list.forEach((item) => {
+      props.list.forEach((item) => {
         var list = {
           id: item.id,
           imgUrl: item.imgUrl
@@ -36,11 +33,10 @@ export default{
         res.push(list)
       })
       return res
-    },
-    showSwiper () {
-      return this.list.length
-    }
-  }
+    })
+    const showSwiper = computed(()=> props.list.length )
+    return {swiperOption, swiperList, showSwiper}
+  },
 }
 </script>
 <style lang="stylus" scoped>
@@ -54,5 +50,4 @@ export default{
     background #eee
     .swiper-img
       width 100%
-
 </style>
